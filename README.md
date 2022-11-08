@@ -202,8 +202,38 @@ it('should display the correct fibonacci value at /fibonacci/6 GET', function(do
 
 ## Exercise 2 - Merge 'dev' to 'main'
 
+### Check if we have `write` permission in GitHub.
+
+- In order to complete this task, we need write permission in `github` when adding `deploy key`.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/110366380/200629073-0c9ee3ea-ddd4-4e40-9945-7c6d6996f1a8.png">
+  <img src="https://user-images.githubusercontent.com/110366380/200642698-9cdc73ea-e010-4d99-a9fe-19bdcd5d055f.png">
 </p>
 
+- If the option is not selected, delete the `deploy key` and add it again with the correct permissions.
+
+### Create a new task in jenkins
+
+- Follow the same steps, specify the branch as `dev`.
+- make sure the `github hook trigger` is selected.
+
+### Write Scripts
+
+- write the scripts to merge the branch in `Build -> Execute Shell`.
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/110366380/200639972-2d0e1bf7-ea76-41d8-ae29-cb30064c4b70.png">
+</p>
+
+### Configure `Post-build` Actions
+
+- Make sure the `Push Only If Build Succeeds` option is selected.
+- Specify the branches we want to merge.
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/110366380/200642334-a09be076-d0a9-4fcd-aa41-aa1fb1a20e33.png">
+</p>
+
+- If the build is successful, we can see the changes we made in `dev` branch in our `main` branch.
+
+## Exercise 3 - Creating EC2 Instance
