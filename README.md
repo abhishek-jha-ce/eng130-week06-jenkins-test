@@ -61,27 +61,74 @@ $ cat eng130_jenkins_abhishek.pub
 
 ### Step 4: Create a New Job in Jenkins
 
+- Select a name for the Job.
+- Select freestyle project and click OK.
 
-![image](https://user-images.githubusercontent.com/110366380/200581650-78e7bffd-935a-4e50-ae37-044f716a7324.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/110366380/200581650-78e7bffd-935a-4e50-ae37-044f716a7324.png">
+</p>
+
+- In the next page, Provide a Description for the Job.
+- Select `Discard old builds` and enter 3 for `Max # of builds to keep`.
+- Copy the `HTTPS` link from `Code -> Clone-> HTTPS` from github repository and paste it into `Project url`
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/110366380/200582632-2a324f2b-700a-4558-8aa5-092b7c5cac0b.png">
+</p>
+
+#### Source Code Management
+
+- In `Source Code Management Section` Select `Git`.
+
+- In the `Repositories` Section, provide the `SSH` link from `Code -> Clone-> SSH` from the github repository.
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/110366380/200582974-ec96b0bb-2b10-4924-a525-539db5f969d8.png">
+</p>
+
+- We will see an error displayed on the screen as we haven't provided the credentials for the key yet. The `SSH` Key pair we made earlier, The public key goes inside the github repo as a `deploy key`. 
+- The `private identification key` needs to be added to `jenkins` for it to be linked to `github` using `SSH`.
+- Click on the `Add` button, and in the next screen for `Add Credentials`:
+  - Select the `Kind` to `SSH Username with private key`
+  - Provide a username: `eng130_jenkins_abhishek`
+  - Select `Enter directly` for the private key and copy and paste the private key from the bash terminal `$ cat eng130_jenkins_abhishek`.
+  - Click on Add Key
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/110366380/200583651-0738dc90-76df-4cd1-816a-b1ed235a895d.png">
+</p>
+
+- Select the key, and the error should disappear. 
+- Change the `master` branch to `main` if you are using `main`.
+- The screen should look like this:
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/110366380/200585444-85e45203-f579-42da-81be-7aabb592de82.png">
+</p>
+
+#### Change the build environment
+
+- In the `Build Environment` Section. Select `Provide Node & npm bin/folder to PATH.
+- This step is required as we need Node and npm installed on the system.
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/110366380/200587562-22d435ca-ab5a-462a-8eb1-ea7e8cbeb743.png">
+</p>
+
+- In the `Build` Section provide with the sricpts that we need to execute.
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/110366380/200588384-6a19d87f-29d3-4117-b543-77380ae524f8.png">
+</p>
 
 
-![image](https://user-images.githubusercontent.com/110366380/200582632-2a324f2b-700a-4558-8aa5-092b7c5cac0b.png)
 
-![image](https://user-images.githubusercontent.com/110366380/200582974-ec96b0bb-2b10-4924-a525-539db5f969d8.png)
+---- End of file ----
 
-
-![image](https://user-images.githubusercontent.com/110366380/200583651-0738dc90-76df-4cd1-816a-b1ed235a895d.png)
-
-- Select the key, and the error should disappear. Also change the `master` branch to `main` if you are using `main`.
-
-![image](https://user-images.githubusercontent.com/110366380/200585444-85e45203-f579-42da-81be-7aabb592de82.png)
-
-
-![image](https://user-images.githubusercontent.com/110366380/200587562-22d435ca-ab5a-462a-8eb1-ea7e8cbeb743.png)
 
 selecting the node
 
-![image](https://user-images.githubusercontent.com/110366380/200588384-6a19d87f-29d3-4117-b543-77380ae524f8.png)
+
 
 click on build no
 
