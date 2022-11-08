@@ -204,6 +204,6 @@ it('should display the correct fibonacci value at /fibonacci/6 GET', function(do
 
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/110366380/200627434-32710422-0588-415d-abe0-2f99b60b020f.png">
+  <img src="https://user-images.githubusercontent.com/110366380/200629073-0c9ee3ea-ddd4-4e40-9945-7c6d6996f1a8.png">
 </p>
 
