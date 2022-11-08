@@ -46,4 +46,14 @@ describe('Fibonacci', function() {
         done();
       });
   });
+  it('should display the correct fibonacci value at /fibonacci/5 GET', function(done) {
+    chai.request(server)
+      .get('/fibonacci/5')
+      .end(function(err, res){
+        res.should.have.status(200);
+        res.text.should.contain('5');
+        done();
+      });
+  });
+
 });
