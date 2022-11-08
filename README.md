@@ -105,3 +105,25 @@ click on build no
 $ git checkout -b dev
 ```
 
+- Add a new `test case` to the existing `testserver.js` file:
+
+```
+it('should display the correct fibonacci value at /fibonacci/6 GET', function(done) {
+    chai.request(server)
+      .get('/fibonacci/6')
+      .end(function(err, res){
+        res.should.have.status(200);
+        res.text.should.contain('8');
+        done();
+      });
+```
+
+- Commit the changes and push it to github.
+
+- As soon as we push it to git hub, the jenkins build is automatically run. We can see the new build `#7 at 15:37`.
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/110366380/200608897-1b97b053-2128-41e9-8bc8-4ded7e64c4dd.png">
+</p>
+
+
