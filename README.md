@@ -158,7 +158,7 @@ $ cat eng130_jenkins_abhishek.pub
 </p>
 
 
-## Exercise 1
+## Exercise 1 - Commit triggers Job
 
 ### Create a new task in jenkins.
 
@@ -198,5 +198,12 @@ it('should display the correct fibonacci value at /fibonacci/6 GET', function(do
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/110366380/200624365-0b8a6133-cac5-450a-96f7-f01b908b2f77.png">
+</p>
+
+## Exercise 2 - Merge 'dev' to 'main'
+
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/110366380/200627434-32710422-0588-415d-abe0-2f99b60b020f.png">
 </p>
 
