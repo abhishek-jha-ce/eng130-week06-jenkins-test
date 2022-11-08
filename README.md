@@ -44,6 +44,12 @@ $ cat eng130_jenkins_abhishek.pub
 
 - Navigate to the github repository and click on `settings`. Then on the left pane, select `Deploy keys`.
 
+- Click on `Add deploy key`.
+
+- Give a suitable title for e.g. `jenkins-key`.
+
+- Paste the copied key in the `Key` section. Save it.
+
 <p align="center">
   <img src="https://user-images.githubusercontent.com/110366380/200579153-09540d8f-a683-4a46-a252-9b2c67e4d347.png">
 </p>
