@@ -160,6 +160,11 @@ $ cat eng130_jenkins_abhishek.pub
 
 ## Exercise 1
 
+### Create a new task in jenkins.
+
+- Follow the same steps, only specify the branch as `dev`.
+- make sure the `github hook trigger` is selected.
+
 ### Create a `dev` branch, make some changes and commit triggers job
 
 - Create a new branch called `dev` and switch to that branch.
@@ -183,12 +188,15 @@ it('should display the correct fibonacci value at /fibonacci/6 GET', function(do
 
 - Commit the changes and push it to github.
 
-- As soon as we push it to git hub, the jenkins build is automatically run. We can see the new build `#7 at 15:37`.
+- As soon as we push it to git hub, the jenkins build is automatically run.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/110366380/200608897-1b97b053-2128-41e9-8bc8-4ded7e64c4dd.png">
+  <img src="https://user-images.githubusercontent.com/110366380/200625590-f7f9dbf2-8340-43af-8b88-3380ba410ef7.png">
 </p>
 
+- If we check the console output, we can see the new test added is also successfully passed.
 
-![image](https://user-images.githubusercontent.com/110366380/200624365-0b8a6133-cac5-450a-96f7-f01b908b2f77.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/110366380/200624365-0b8a6133-cac5-450a-96f7-f01b908b2f77.png">
+</p>
 
