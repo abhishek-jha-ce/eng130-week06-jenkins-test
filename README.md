@@ -190,3 +190,5 @@ it('should display the correct fibonacci value at /fibonacci/6 GET', function(do
 </p>
 
 
+![image](https://user-images.githubusercontent.com/110366380/200624365-0b8a6133-cac5-450a-96f7-f01b908b2f77.png)
+
