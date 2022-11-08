@@ -59,5 +59,30 @@ $ cat eng130_jenkins_abhishek.pub
 </p>
 
 
+### Step 4: .
+
+
 ![image](https://user-images.githubusercontent.com/110366380/200581650-78e7bffd-935a-4e50-ae37-044f716a7324.png)
 
+
+![image](https://user-images.githubusercontent.com/110366380/200582632-2a324f2b-700a-4558-8aa5-092b7c5cac0b.png)
+
+![image](https://user-images.githubusercontent.com/110366380/200582974-ec96b0bb-2b10-4924-a525-539db5f969d8.png)
+
+
+![image](https://user-images.githubusercontent.com/110366380/200583651-0738dc90-76df-4cd1-816a-b1ed235a895d.png)
+
+- Select the key, and the error should disappear. Also change the `master` branch to `main` if you are using `main`.
+
+![image](https://user-images.githubusercontent.com/110366380/200585444-85e45203-f579-42da-81be-7aabb592de82.png)
+
+
+![image](https://user-images.githubusercontent.com/110366380/200587562-22d435ca-ab5a-462a-8eb1-ea7e8cbeb743.png)
+
+selecting the node
+
+![image](https://user-images.githubusercontent.com/110366380/200588384-6a19d87f-29d3-4117-b543-77380ae524f8.png)
+
+click on build no
+
+![image](https://user-images.githubusercontent.com/110366380/200588550-dfc00ddc-67e3-4767-8207-7f42574e6efb.png)
