@@ -61,6 +61,7 @@ $ cat eng130_jenkins_abhishek.pub
 
 ### Step 4: Create a New Job in Jenkins
 
+#### Step 4.1: Create a New Job
 - Select a name for the Job.
 - Select freestyle project and click OK.
 
@@ -76,7 +77,7 @@ $ cat eng130_jenkins_abhishek.pub
   <img src="https://user-images.githubusercontent.com/110366380/200582632-2a324f2b-700a-4558-8aa5-092b7c5cac0b.png">
 </p>
 
-#### Source Code Management
+#### Step 4.2: Source Code Management
 
 - In `Source Code Management Section` Select `Git`.
 
@@ -106,40 +107,55 @@ $ cat eng130_jenkins_abhishek.pub
   <img src="https://user-images.githubusercontent.com/110366380/200585444-85e45203-f579-42da-81be-7aabb592de82.png">
 </p>
 
-#### Change the build environment
+#### Step 4.3: Change the build environment
 
 - In the `Build Environment` Section. Select `Provide Node & npm bin/folder to PATH.
 - This step is required as we need Node and npm installed on the system.
+- In the `Build` Section provide with the sricpts that we need to execute.
+
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/110366380/200587562-22d435ca-ab5a-462a-8eb1-ea7e8cbeb743.png">
 </p>
 
-- In the `Build` Section provide with the sricpts that we need to execute.
+#### Step 4.4: Specify a `Agent Node` to do the work instead of `Master Node`
+
+- In `Office 365 Connector` section select `Restrict where this project can be run` and in `Label Expression` select `sparta-ubuntu-node`
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/110366380/200588384-6a19d87f-29d3-4117-b543-77380ae524f8.png">
 </p>
 
 
+- Now click on the build in 'Jenkins` for the job we created. We can see the options availble.
 
----- End of file ----
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/110366380/200588550-dfc00ddc-67e3-4767-8207-7f42574e6efb.png">
+</p>
 
+### Step 5: Automate using `Webhooks` 
 
-selecting the node
+#### Step 5.1: Setup Webhooks in GitHub
 
+- To use webhooks, we navigate back to github, and select `Webhooks` in the setting page:
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/110366380/200591403-bdd59517-ad88-4e9d-8ac0-5ad241e1a742.png">
+</p>
 
-click on build no
+- Click on `Add webhook` and enter the `Payload URL`. This is the same url we use for jenkins:
 
-![image](https://user-images.githubusercontent.com/110366380/200588550-dfc00ddc-67e3-4767-8207-7f42574e6efb.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/110366380/200591111-12fc8552-becc-4b54-bf4e-dc59a9a186f0.png">
+</p>
 
-![cfd](https://user-images.githubusercontent.com/110366380/200591403-bdd59517-ad88-4e9d-8ac0-5ad241e1a742.png)
+#### Step 5.2: Allow GitHub triggers in Jenkins
 
+- In Jenkins, Select `Configure` for the build we want to add webhooks to and in the `Build Triggers` section select `GitHub hook trigger for GITScm polling`
 
-![image](https://user-images.githubusercontent.com/110366380/200591111-12fc8552-becc-4b54-bf4e-dc59a9a186f0.png)
-
-![image](https://user-images.githubusercontent.com/110366380/200592967-26c1f849-7cf7-42a1-91b0-4a7c440b7f52.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/110366380/200592967-26c1f849-7cf7-42a1-91b0-4a7c440b7f52.png">
+</p>
 
 
 ## Exercise 1
