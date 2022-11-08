@@ -93,3 +93,15 @@ click on build no
 ![image](https://user-images.githubusercontent.com/110366380/200591111-12fc8552-becc-4b54-bf4e-dc59a9a186f0.png)
 
 ![image](https://user-images.githubusercontent.com/110366380/200592967-26c1f849-7cf7-42a1-91b0-4a7c440b7f52.png)
+
+
+## Exercise 1
+
+### Create a `dev` branch, make some changes and commit triggers job
+
+- Create a new branch called `dev` and switch to that branch.
+
+```
+$ git checkout -b dev
+```
+
