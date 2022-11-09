@@ -95,9 +95,21 @@ EOF
 ```
 - Save this job.
 
+## Make Changes 
+
+- Go the the `index.ejs` file in app and make some changes.
+- Push the changes to github.
+- We have not automated it yet, so we have to manually build the jenkins job.
+- After build is successful, we can refresh the browser and see the changes.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/110366380/200844825-7ca51c73-b273-4571-93d7-b88743edb196.png">
 </p>
             
+## Automate the changes
 
+- In task 2, we merged the `dev` branch to `main` branch.
+- Go to Configure, in the `dev-test` job.
+- In the `Post-build Actions` tab
+  - Click on `Add post-build action` and select `Projects to build`
+  - specify the name of this job (3rd job) in there. - `abhishek-ec2-integration`
