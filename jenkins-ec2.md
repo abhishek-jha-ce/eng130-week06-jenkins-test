@@ -32,10 +32,68 @@
 - `SSH` into the instance using the terminal. Example: ssh -i "eng130.pem" ubuntu@355.249.863.201
 - Navigate to the `app` folder and type `npm start` to start the app.
 - Copy the Pulic IP of the `app` Virtual Machine and check it in the browser to see it's working.
-- If it's working delete the `app` folder from the `EC2 Instance`, we are copying it via `jenkins`.
+- If it's working delete the `app` folder from the `EC2 Instance`, we are copying it via `jenkins`. The app folder is already there as we are using an image to build it.
 ```
-rm -rf/app to delete everything
+rm -rf app/ - Delete app folder
 ```
+
+## Create a New Jenkins job
+
+- Create a new Job.
+- Select free style project.
+- Next Section - fill out these details
+
+##### General Tab
+
+- Give a suitable description for the job
+- Discard Old builds
+  - Strategy - Log Rotation  
+  - Max # of builds to keep: 3
+- GitHub project
+  - Provide url of the git hub project `https://github.com/abhishek-jha-ce/eng130-week06-jenkins-test.git/`
+
+##### Office 365 Connector Tab
+
+- Select `Restrict where this project can be run`
+  - Label Expression `sparta-ubuntu-node`
+
+##### Source Code Management Tab
+
+- Select `Git`
+  - Repositories - Repository URL `git@github.com:abhishek-jha-ce/eng130-week06-jenkins-test.git` the `SSH` link for the same git hub repo.
+  - Credentials - Private Key created for jenkins. `eng130_jenkis_abhishek`. If previously used, select it.
+
+  - Branches to build - Branch Specifier - `*/main`
+
+##### Build Triggers Tab
+
+- Leave this tab empty.
+
+##### Build Environment Tab
+
+- Select `Provide Node & npm bin/folder to PATH - use the default values generated.
+- SSH Agent - Credentials - Copy and paste the `eng130.pem` file content. This is used to connect to our `EC2 Instances`.
+
+##### Build Tab
+
+- Select `Add build step` - `execute shell` and enter the following commands:
+
+```
+# To copy the files from git hub to ec2 instance
+rsync -avz -e "ssh -o StrictHostKeyChecking=no" app ubuntu@[public ip]:/home/ubuntu
+rsync -avz -e "ssh -o StrictHostKeyChecking=no" environment ubuntu@[public ip]:/home/ubuntu
+
+ssh -A -o "StrictHostKeyChecking=no" ubuntu@[public ip] <<EOF
+    cd app
+    
+    sudo killall -9 node # Kill any existing node process
+    
+    #bash provsion.sh
+    npm install
+    nohup node app.js > /dev/null 2>&1 & # To run node in background
+EOF
+```
+- Save this job.
 
 
 <p align="center">
