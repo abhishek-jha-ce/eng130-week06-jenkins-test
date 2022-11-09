@@ -109,7 +109,9 @@ EOF
 ## Automate the changes
 
 - In task 2, we merged the `dev` branch to `main` branch.
-- Go to Configure, in the `dev-test` job.
+- Go to Configure, in the `dev-merge` job.
 - In the `Post-build Actions` tab
   - Click on `Add post-build action` and select `Projects to build`
   - specify the name of this job (3rd job) in there. - `abhishek-ec2-integration`
+
+![image](https://user-images.githubusercontent.com/110366380/200894748-e27601cc-a051-49c0-89df-bce78647cb78.png)
