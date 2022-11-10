@@ -115,3 +115,21 @@ EOF
   - specify the name of this job (3rd job) in there. - `abhishek-ec2-integration`
 
 ![image](https://user-images.githubusercontent.com/110366380/200894748-e27601cc-a051-49c0-89df-bce78647cb78.png)
+
+## Pipeline
+
+![image](https://user-images.githubusercontent.com/110366380/201049666-38a05f5b-14eb-4f3f-beff-d1a7853907ab.png)
+
+## Adding Database to the pipeline
+
+- Launch a new instance
+- Provide `Name` and tags - Example: `eng130-abhishek-jenkins-db`
+- AMI - select existing mongodb AMI
+- Instance Type - Leave default t2.micro
+- Key Pair(login) - select eng130 , the existing .pem file
+- Select private subnet.
+- Launch the instance.
+
+## Creating a Jenkins job for the Database
+
+
